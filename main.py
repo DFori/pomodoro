@@ -1,6 +1,7 @@
 import math
 import tkinter
 from tkinter import Tk
+import random
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -13,7 +14,15 @@ LONG_BREAK_MIN = 20
 reps = 0
 check= ""
 timer = None
+new_color = None
 
+def bg_color():
+    global new_color
+    color = [YELLOW, RED, PINK, GREEN]
+    new_color = random.choice(color)
+    window.config(bg=new_color)
+    start_btn.config(bg=new_color)
+    reset_btn.config(bg=new_color)
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 def reset_timer():
@@ -95,6 +104,7 @@ reset_btn.grid(column=5, row=2)
 
 
 window.mainloop()
+
 
 
 
